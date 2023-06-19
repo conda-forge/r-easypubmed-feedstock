@@ -1,11 +1,11 @@
-About r-easypubmed
-==================
+About r-easypubmed-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-easypubmed-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.data-pulse.com/dev_site/easypubmed/
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-easypubmed-feedstock/blob/main/LICENSE.txt)
 
 Summary: Query NCBI Entrez and retrieve PubMed records in XML or text format. Process PubMed records by extracting and aggregating data from selected fields. A large number of records can be easily downloaded via this simple-to-use interface to the NCBI PubMed API.
 
