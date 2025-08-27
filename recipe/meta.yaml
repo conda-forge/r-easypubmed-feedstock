@@ -1,4 +1,4 @@
-{% set version = '2.13' %}
+{% set version = "3.1.6" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/easyPubMed_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/easyPubMed/easyPubMed_{{ version }}.tar.gz
-  sha256: ad94b76d7386594c1bd6fb008a7c2ee708d49712575632eef36f9e8f7d8ba8f1
+  sha256: 1a20aca60484e4100736eec6bc6cf6a790ce0576f4177114d70b1599662baa29
 
 build:
-  number: 3
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -24,8 +24,10 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-rlang
   run:
     - r-base
+    - r-rlang
 
 test:
   commands:
@@ -34,36 +36,12 @@ test:
 
 about:
   home: https://www.data-pulse.com/dev_site/easypubmed/
-  license: GPL-2.0-only
-  summary: Query NCBI Entrez and retrieve PubMed records in XML or text format. Process PubMed
-    records by extracting and aggregating data from selected fields. A large number
-    of records can be easily downloaded via this simple-to-use interface to the NCBI
-    PubMed API.
-  license_family: GPL2
+  license: GPL-3.0-only
+  summary: Query NCBI Entrez and retrieve PubMed records in XML or text format. Process PubMed records by extracting and aggregating data from selected fields. A large number of records can be easily downloaded via this simple-to-use interface to the NCBI PubMed API.
+  license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: easyPubMed
-# Type: Package
-# Title: Search and Retrieve Scientific Publication Records from PubMed
-# Version: 2.13
-# Date: 2019-03-25
-# Author: Damiano Fantini
-# Maintainer: Damiano Fantini <damiano.fantini@gmail.com>
-# Description: Query NCBI Entrez and retrieve PubMed records in XML or text format. Process PubMed records by extracting and aggregating data from selected fields. A large number of records can be easily downloaded via this simple-to-use interface to the NCBI PubMed API.
-# URL: https://www.data-pulse.com/dev_site/easypubmed/
-# Depends: R(>= 3.1), utils
-# Suggests: knitr, rmarkdown
-# VignetteBuilder: knitr
-# LazyData: true
-# Encoding: UTF-8
-# License: GPL-2
-# RoxygenNote: 6.1.1
-# NeedsCompilation: no
-# Packaged: 2019-03-29 08:24:59 UTC; dami
-# Repository: CRAN
-# Date/Publication: 2019-03-29 09:00:02 UTC
